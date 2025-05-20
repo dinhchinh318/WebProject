@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Điện Thoại</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+</head>
+<body>
+  <header>
+    <h1>📱 Shop Điện Thoại</h1>
+  </header>
+
+  <main>
+    <section class="products">
+      <div class="product" data-name="iPhone 14" data-price="25000000">
+        <img src="images/iphone.jpg" alt="iPhone 14">
+        <h2>iPhone 14</h2>
+        <p>25.000.000 VND</p>
+        <button onclick="addToCart(this)">Thêm vào giỏ</button>
+      </div>
+      <div class="product" data-name="Samsung S24" data-price="22000000">
+        <img src="images/samsung.jpg" alt="Samsung S24">
+        <h2>Samsung S24</h2>
+        <p>22.000.000 VND</p>
+        <button onclick="addToCart(this)">Thêm vào giỏ</button>
+      </div>
+    </section>
+
+    <section class="cart">
+      <h2>🛒 Giỏ hàng</h2>
+      <ul id="cart-items"></ul>
+      <p><strong>Tổng: <span id="total">0</span> VND</strong></p>
+      <form action="order.php" method="POST" onsubmit="return submitCart()">
+        <input type="hidden" name="orderData" id="orderData" />
+        <button type="submit">Đặt hàng</button>
+      </form>
+    </section>
+  </main>
+</body>
+<script src="../JS/script.js"></script>
+</html>
